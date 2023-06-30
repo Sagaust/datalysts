@@ -7,11 +7,10 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      DJANGO_SECRET_KEY: some-secret-key
-      DATABASE_URL: postgres://user:password@database:5432/database
+      DJANGO_SECRET_KEY: candace
+      DATABASE_URL: postgres://sagaust:8ZsNnOvDAFAuQC62r61miEANIYgjyUUJ@dpg-cifcqj95rnujc4rsfhb0-a/dbdatalysts
 
-databases:
   default:
-    name: my-django-app
-    provider: postgres
-    plan: starter
+    name: databases:dbdatalysts
+    provider: render
+    plan: free
