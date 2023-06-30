@@ -1,5 +1,6 @@
 services:
   - web:
+    type: web
     name: datalysts
     image: django:latest
     command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
