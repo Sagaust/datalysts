@@ -1,0 +1,17 @@
+services:
+  web:
+    name: datalysts
+    image: django:latest
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DJANGO_SECRET_KEY: some-secret-key
+      DATABASE_URL: postgres://user:password@database:5432/database
+
+databases:
+  default:
+    name: my-django-app
+    provider: postgres
+    plan: starter
