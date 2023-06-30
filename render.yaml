@@ -1,5 +1,4 @@
 services:
-  web:
     type: web
     name: datalysts
     image: django:latest
@@ -11,7 +10,6 @@ services:
       DJANGO_SECRET_KEY: candace
       DATABASE_URL: postgres://sagaust:8ZsNnOvDAFAuQC62r61miEANIYgjyUUJ@dpg-cifcqj95rnujc4rsfhb0-a/dbdatalysts
 databases:
-  default:
     name: databases:dbdatalysts
     provider: postgres
     plan: free
