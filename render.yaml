@@ -1,4 +1,4 @@
-services:
+--services:
   -web:
     type: web
     name: datalysts
@@ -10,7 +10,7 @@ services:
     environment:
       DJANGO_SECRET_KEY: candace
       DATABASE_URL: postgres://sagaust:8ZsNnOvDAFAuQC62r61miEANIYgjyUUJ@dpg-cifcqj95rnujc4rsfhb0-a/dbdatalysts
-databases:
+--databases:
   -default:
     name: databases:dbdatalysts
     provider: postgres
