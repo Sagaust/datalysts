@@ -1,15 +1,17 @@
 services:
-  -type: web
-  name: datalysts
-  image: django:latest
-  command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
-  build:
-  context: .
-  dockerfile: Dockerfile
-environment:
-  DJANGO_SECRET_KEY: candace
-  DATABASE_URL: postgres://sagaust:8ZsNnOvDAFAuQC62r61miEANIYgjyUUJ@dpg-cifcqj95rnujc4rsfhb0-a/dbdatalysts
+  web:
+    type: web
+    name: datalysts
+    image: django:latest
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DJANGO_SECRET_KEY: candace
+      DATABASE_URL: postgres://sagaust:8ZsNnOvDAFAuQC62r61miEANIYgjyUUJ@dpg-cifcqj95rnujc4rsfhb0-a/dbdatalysts
 databases:
-  name: databases:dbdatalysts
-  provider: postgres
-  plan: free
+  default:
+    name: databases:dbdatalysts
+    provider: postgres
+    plan: free
